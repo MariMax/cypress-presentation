@@ -1,0 +1,28 @@
+html {
+  font-size: 10px;
+}
+
+:root {
+  --white: #fff;
+  --blue: #39C2D7;
+  --gray: #464547;
+  --green: #A3C644;
+  --dark-blue: #1A9CB0;
+}
+
+.slide-0__content{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.slide-0__wrapper{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.slide-0__name {
+    color: var(--blue);
+    align-self: flex-end;
+}
