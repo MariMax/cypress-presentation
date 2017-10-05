@@ -1,5 +1,5 @@
 html {
-  font-size: 10px;
+  font-size: 1rem;
 }
 
 :root {
@@ -25,4 +25,36 @@ html {
 .slide-0__name {
     color: var(--blue);
     align-self: flex-end;
+}
+
+.slide-1__content{
+  display: flex;
+  align-items: stretch;
+}
+
+.slide-1__text__wrapper{
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.slide-1__picture {
+  flex-basis: 25%;
+}
+
+.slide-1__picture__wrapper img {
+  border: 1px solid transparent;
+  border-radius: 5rem;
+}
+
+.slide-1__name {
+  color: var(--blue)
+}
+
+.slide-2__2__header,
+.slide-2__1__header,
+.slide-2__3__header {
+  color: var(--blue)!important;
 }
