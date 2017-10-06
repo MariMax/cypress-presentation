@@ -8,6 +8,7 @@ html {
   --gray: #464547;
   --green: #A3C644;
   --dark-blue: #1A9CB0;
+  --raspberry: #B22746;
 }
 
 .slide-0__content{
@@ -55,6 +56,32 @@ html {
 
 .slide-2__2__header,
 .slide-2__1__header,
-.slide-2__3__header {
+.slide-2__3__header,
+.slide-2__4__header,
+.slide-2__5__header{
   color: var(--blue)!important;
+}
+
+.slide-2__3__picture {
+  position: relative;
+}
+
+.slide-2__5__svg {
+  position: absolute;
+  bottom: -7.5rem;
+  right: 9rem;  
+  color: var(--raspberry);
+}
+
+.slide-2__5__svg.fragment{
+  transform: scale(10);
+  width: 10rem;
+}
+
+.slide-2__5__svg.fragment.current-fragment {
+  transform: scale(1) rotateZ(-30deg);
+}
+
+.slide-2__5__svg.fragment.visible {
+  transform: scale(1) rotateZ(-30deg);
 }
