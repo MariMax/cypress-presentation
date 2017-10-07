@@ -58,7 +58,8 @@ html {
 .slide-2__1__header,
 .slide-2__3__header,
 .slide-2__4__header,
-.slide-2__5__header{
+.slide-2__5__header,
+.slide-3__header{
   color: var(--blue)!important;
 }
 
