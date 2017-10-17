@@ -27,6 +27,37 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
+
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** test slide **************************** -->
+			<!-- ********************************************************************* -->
+
+			<section class="slide-8">
+				<h2 class="slide-3__header">Fixtures</h2>
+				<p>
+					<span class="heighlight-e-green">cy.fixture(
+						<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
+				</p>
+				<p class="fragment fade-in">
+					<span class="heighlight-e-green">cy.fixture(
+						<span class="heighlight-e-blue">'name'</span>).as(
+						<span class="heighlight-e-blue">'nameAlias'</span>)</span>
+				</p>
+				<p class="fragment fade-in">
+					<span class="heighlight-e-green">cy.route(
+						<span class="heighlight-e-blue">'GET'</span>,
+						<span class="heighlight-e-blue">'**/users'</span>,
+						<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
+				</p>
+				<aside class="notes">
+					probably you have noticed there were json files in my env settings, it was fixtures, for tests, you can use different types
+					of files, it could be pictures, vidoe, or whatever you want. I keep those in fixtures folder.
+
+				</aside>
+			</section>
+
+
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 0 ******************************* -->
 			<!-- ********************************************************************* -->
@@ -153,29 +184,25 @@
 					</div>
 					<aside class="notes">
 						Probably we all know this testing pyramid, all of us write a lot of unit tests, because it doesnt take a lot of time it easy
-						to write, fast to run and we have a lot of tools to work with them 
-						And we are good at it, we really good at testing small pieces of our app.
-						If we make an analogy and will think about our produce like a car for example
-						we test different parts of the car, we good at testing dors, windows, windshield wipes,
-						but we dont test our car on the road, lets say to Maine, in the winter
-						
-						the real value for our end users in UI tests, our
-						end users don't care about unit tests The main issue, we don't have the right tool for UI tests, the only tool is selenium,
-						which is awfull. Let's imagine we have to start testing with selenium today what is your actions?
+						to write, fast to run and we have a lot of tools to work with them And we are good at it, we really good at testing
+						small pieces of our app. If we make an analogy and will think about our produce like a car for example we test different
+						parts of the car, we good at testing dors, windows, windshield wipes, but we dont test our car on the road, lets say
+						to Maine, in the winter the real value for our end users in UI tests, our end users don't care about unit tests The
+						main issue, we don't have the right tool for UI tests, the only tool is selenium, which is awfull. Let's imagine we
+						have to start testing with selenium today what is your actions?
 					</aside>
 				</section>
 				<section>
-						<h2 class="slide-3__header">Start with Selenium</h2>
-						<p>What the issue? Just install it and start</p>
-						<p class="fragment fade-in">No it's not selenium</p>
-						<p class="fragment fade-in">You have to pray to selenium gods</p>
-						<p class="fragment fade-in">Probably you have to sacrifice someone, during full moon</p>
-						<p class="fragment fade-in">Write some tests, and let selenium work</p>
-						<p class="fragment fade-in">If it doesn't work today, maybe tomorrow will be the better day</p>
-						<aside class="notes">
-								What we can dream about?
-							</aside>
-		
+					<h2 class="slide-3__header">Start with Selenium</h2>
+					<p>What the issue? Just install it and start</p>
+					<p class="fragment fade-in">No it's not selenium</p>
+					<p class="fragment fade-in">You have to pray to selenium gods</p>
+					<p class="fragment fade-in">Probably you have to sacrifice someone, during full moon</p>
+					<p class="fragment fade-in">Write some tests, and let selenium work</p>
+					<p class="fragment fade-in">If it doesn't work today, maybe tomorrow will be the better day</p>
+					<aside class="notes">
+						What can we dream about?
+					</aside>
 				</section>
 			</section>
 
@@ -185,46 +212,146 @@
 
 			<section>
 				<h2 class="slide-3__header">Dream</h2>
-				<p>Everything should be as simple as <span class="heighlight-e-green">npm</span></p>
+				<p>Everything should be as simple as
+					<span class="heighlight-e-green">npm</span>
+				</p>
 				<p class="fragment fade-in">Should be easy to install</p>
 				<p class="fragment fade-in">Should be easy to write tests</p>
 				<p class="fragment fade-in">Should be clear what was wrong if test fails</p>
 				<p class="fragment fade-in">Tests should not depend on moon phases</p>
 				<aside class="notes">
-						You can say it is almost impossible, but there is hope, lets dive in
+					You can say it is almost impossible, but there is hope, lets dive in
 				</aside>
 			</section>
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 5 ******************************* -->
 			<!-- ********************************************************************* -->
-			<section class="slide-5"data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/605314/images/4205975/star-wars-4.png">
+			<section class="slide-5" data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/605314/images/4205975/star-wars-4.png">
 				<div class="default-background fragment fade-in" data-fragment-index="3"></div>
-					<h2 class="slide-3__header">Hope</h2>
-					<p class="fragment fade-in" data-fragment-index="0">Step 1 install: <span class="heighlight-e-green">npm i cypress -D</span></p>
-					<p class="fragment fade-in" data-fragment-index="1">Step 2 write simple test: <span class="heighlight-e-green">Cypress.visit(<span class="heighlight-e-blue">'https://google.com'</span>)</span></p>
-					<p class="fragment fade-in" data-fragment-index="2">Step 3 assert: <span class="heighlight-e-green">cy.focused()</span></p>
-					<p class="fragment fade-in" data-fragment-index="3">Step 4 run</p>						
-					<p class="fragment fade-in" >Step 5 look at results, it could be anything, including screenshots and video footage</p>
-					<aside class="notes">
-							Ok lets check small demo how it's actually works
-					</aside>			
+				<h2 class="slide-3__header">Hope</h2>
+				<p class="fragment fade-in" data-fragment-index="0">Step 1 install:
+					<span class="heighlight-e-green">npm i cypress -D</span>
+				</p>
+				<p class="fragment fade-in" data-fragment-index="1">Step 2 write simple test:
+					<span class="heighlight-e-green">Cypress.visit(
+						<span class="heighlight-e-blue">'https://google.com'</span>)</span>
+				</p>
+				<p class="fragment fade-in" data-fragment-index="2">Step 3 assert:
+					<span class="heighlight-e-green">cy.focused()</span>
+				</p>
+				<p class="fragment fade-in" data-fragment-index="3">Step 4 run</p>
+				<p class="fragment fade-in">Step 5 look at the results, it could be anything, including screenshots and video footage</p>
+				<aside class="notes">
+					Ok lets check small demo how it's actually works
+				</aside>
 			</section>
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 6 ******************************* -->
 			<!-- ********************************************************************* -->
 
-			<!-- Demo on something simple, just to show the app, explain about electron, mac windows plans etc -->
+			<section class="slide-6">
+				<h2 class="slide-3__header">Demo</h2>
+				<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+						describe('Login page tests', () => {
+							it('should have logo and inputs for creds', () => {
+								cy.visit(Cypress.env('host'));
+								cy.get('.logo-wrapper');	//should have logo
+								cy.get('#lusername');		//should have email input
+								cy.get('#lpassword');		//and password input
+								cy.get('.forgot-password');	//should have forgot pass link
+								cy.screenshot();		//and let's make a screenshot
+							})
+						})
+				</code></pre>
+
+				<aside class="notes">
+					Here you can see simple test, which will open 'host' page and expectes to find logo, and input fields for user name and pass
+					lets try to run it, as you can see it doesn't take much time, Everything is smooth and fast
+				</aside>
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 7 ******************************* -->
 			<!-- ********************************************************************* -->
 
-			<!-- explain about different env and how to use them-->
+			<section class="slide-7">
+				<section>
+					<h2 class="slide-3__header">Environments</h2>
+					<span class="heighlight-e-green">Cypress.visit(
+						<span class="heighlight-e-blue">'host'</span>)</span>
+					<aside class="notes">
+						As you saw on the previous slide, there wase something like Cypress.env('host'). a little bit overhead for such a simple
+						example, but lets imagine we have 3 different enviroments, well now you can set host to different url, and actualy
+						you have 4 different options how to do that
+					</aside>
+				</section>
+				<section>
+					<h2 class="slide-3__header">Config file</h2>
+					<p>cypress.json</p>
+					<pre>
+							<code class="json" data-trim style="font-size: 18px;">
+									{
+										"fixturesFolder":"./src/main/resources/static/test/fixtures",
+										"integrationFolder": "./.tmp/build/tests",
+										"ignoreTestFiles": "/**/!(*cyspec*).js",
+										"chromeWebSecurity": false,
+										"env": {
+											"host": "https://si-extern.example.com",
+											"host-internal": "https://si-intern.example.com",
+											"mailServer": "http://si-intern.example.com:6080",
+											"admin": "si-admin-login.json",
+											"firstUser": "si-maxim-login.json",
+											"secondUser": "si-maxim-external-login.json"
+										}
+									}								
+							</code>
+						</pre>
+					<aside class="notes">
+						this file contains cypress options, such us where to store screenshots, vidio files etc, and we also can include env settings
+						this option perfect for default values or settings shared between all the environments
+					</aside>
+				</section>
+				<section>
+					<h2 class="slide-3__header">Env Config file</h2>
+					<p>cypress.env.json</p>
+					<pre>
+								<code class="json" data-trim style="font-size: 18px;">
+										{
+												"host": "https://dev-extern.example.com",
+												"host-internal": "https://dev-intern.example.com",
+												"mailServer": "http://dev-intern.example.com:6080",
+												"admin": "dev-admin-login.json",
+												"firstUser": "dev-maxim-login.json",
+												"secondUser": "dev-maxim-external-login.json"
+										}	
+								</code>
+							</pre>
+					<aside class="notes">
+						you can add this file for CI or for local use by developers, all conflicting settings from this file will override env settings
+						from cypress.json
+					</aside>
+				</section>
+				<section>
+					<h2 class="slide-3__header">env varialbles</h2>
+					<code>export cypress_host=pre-dev.example.com</code>
+					<aside class="notes">
+						next option is to set env variables and they will override settings above
+					</aside>
+				</section>
+				<section>
+					<h2 class="slide-3__header">CLI settings</h2>
+					<code>cypress open --env host=pre-dev.example.com</code>
+					<aside class="notes">
+						it is possible to pass env options as a cli parameter, this param will override conflictig options mentioned above
+					</aside>
+				</section>
+
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 8 ******************************* -->
 			<!-- ********************************************************************* -->
-			
+
 			<!-- fixtures -->
 
 			<!-- ********************************************************************* -->
