@@ -33,29 +33,6 @@
 			<!-- ***************************** test slide **************************** -->
 			<!-- ********************************************************************* -->
 
-			<section class="slide-8">
-				<h2 class="slide-3__header">Fixtures</h2>
-				<p>
-					<span class="heighlight-e-green">cy.fixture(
-						<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
-				</p>
-				<p class="fragment fade-in">
-					<span class="heighlight-e-green">cy.fixture(
-						<span class="heighlight-e-blue">'name'</span>).as(
-						<span class="heighlight-e-blue">'nameAlias'</span>)</span>
-				</p>
-				<p class="fragment fade-in">
-					<span class="heighlight-e-green">cy.route(
-						<span class="heighlight-e-blue">'GET'</span>,
-						<span class="heighlight-e-blue">'**/users'</span>,
-						<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
-				</p>
-				<aside class="notes">
-					probably you have noticed there were json files in my env settings, it was fixtures, for tests, you can use different types
-					of files, it could be pictures, vidoe, or whatever you want. I keep those in fixtures folder.
-
-				</aside>
-			</section>
 
 
 			<!-- ********************************************************************* -->
@@ -352,13 +329,85 @@
 			<!-- ***************************** slide 8 ******************************* -->
 			<!-- ********************************************************************* -->
 
-			<!-- fixtures -->
+			<section class="slide-8">
+				<h2 class="slide-3__header">Fixtures</h2>
+				<p>
+					<span class="heighlight-e-green">cy.fixture(
+						<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
+				</p>
+				<p class="fragment fade-in">
+					<span class="heighlight-e-green">cy.fixture(
+						<span class="heighlight-e-blue">'name'</span>).as(
+						<span class="heighlight-e-blue">'nameAlias'</span>)</span>
+				</p>
+				<p class="fragment fade-in">
+					<span class="heighlight-e-green">cy.route(
+						<span class="heighlight-e-blue">'GET'</span>,
+						<span class="heighlight-e-blue">'**/users'</span>,
+						<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
+				</p>
+				<aside class="notes">
+					probably you have noticed there were json files in my env settings, it was fixtures, for tests, you can use different types
+					of files, it could be pictures, video, or whatever you want. And by default cypress will search them in fixtures folder
+					and of cource you can change it in the settings
+				</aside>
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 9 ******************************* -->
 			<!-- ********************************************************************* -->
 
-			<!-- dom snapshoots -->
+			<section class="slide-9">
+				<h2 class="slide-3__header">Big demo time</h2>
+				<aside class="notes">
+					Ok it's demo time, I'll show you how it works in out project, probably it will take some time, because we are trying to do
+					fully functional tests, the same way as user interacts with out app as you can see some tests are falling, but it's
+					clear why they are falling, Cypress team invest a lot of time into documentation and error description,
+					but the most amazing part of this tool, they make DOM snapshot on each step
+				</aside>
+			</section>
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 10 ****************************** -->
+			<!-- ********************************************************************* -->
+
+			<!-- time: how to improve -->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 11 ****************************** -->
+			<!-- ********************************************************************* -->
+
+			<!-- wag demo + nxc -->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 12 ****************************** -->
+			<!-- ********************************************************************* -->
+			
+			<!-- CI + Docker demo + video-->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 13 ****************************** -->
+			<!-- ********************************************************************* -->
+
+			<!-- competitors puppeteer, testcafe -->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 14 ****************************** -->
+			<!-- ********************************************************************* -->
+			
+			<!-- gotchas  -->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 15 ****************************** -->
+			<!-- ********************************************************************* -->
+			
+			<!-- thank you -->
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 16 ****************************** -->
+			<!-- ********************************************************************* -->
+
+			<!-- references and contacts -->
 		</div>
 	</div>
 
