@@ -34,7 +34,6 @@
 			<!-- ********************************************************************* -->
 
 
-
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 0 ******************************* -->
 			<!-- ********************************************************************* -->
@@ -332,8 +331,7 @@
 			<section class="slide-8">
 				<h2 class="slide-3__header">Fixtures</h2>
 				<p>
-					<span class="heighlight-e-green">cy.fixture(
-						<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
+					<span class="heighlight-e-green">cy.fixture(<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
 				</p>
 				<p class="fragment fade-in">
 					<span class="heighlight-e-green">cy.fixture(
@@ -341,10 +339,7 @@
 						<span class="heighlight-e-blue">'nameAlias'</span>)</span>
 				</p>
 				<p class="fragment fade-in">
-					<span class="heighlight-e-green">cy.route(
-						<span class="heighlight-e-blue">'GET'</span>,
-						<span class="heighlight-e-blue">'**/users'</span>,
-						<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
+					<span class="heighlight-e-green">cy.route(<span class="heighlight-e-blue">'GET'</span>,<span class="heighlight-e-blue">'**/users'</span>,<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
 				</p>
 				<aside class="notes">
 					probably you have noticed there were json files in my env settings, it was fixtures, for tests, you can use different types
@@ -362,8 +357,8 @@
 				<aside class="notes">
 					Ok it's demo time, I'll show you how it works in out project, probably it will take some time, because we are trying to do
 					fully functional tests, the same way as user interacts with out app as you can see some tests are falling, but it's
-					clear why they are falling, Cypress team invest a lot of time into documentation and error description,
-					but the most amazing part of this tool, they make DOM snapshot on each step
+					clear why they are falling, Cypress team invest a lot of time into documentation and error description, but the most
+					amazing part of this tool, they make DOM snapshot on each step
 				</aside>
 			</section>
 
@@ -371,18 +366,41 @@
 			<!-- ***************************** slide 10 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- time: how to improve -->
+			<section class="slide-10">
+				<h2 class="slide-3__header">Time</h2>
+				<p class="fragment">I want faster</p>
+				<p class="fragment fade-in">I want faster</p>
+				<p class="fragment fade-in"><span class="heighlight-e-green">cy.route(<span class="heighlight-e-blue">'GET'</span>,<span class="heighlight-e-blue">'**/users'</span>,<span class="heighlight-e-blue">'fx:users.json'</span>)</span></p>
+				<aside class="notes">
+					Last demo took some time, this is the issue, especially during development, you just don't have so much time to wait while
+					all the tests run after esch your change, and obviously you don't want to wait them to complete after your last commit on Friday night
+					So how can we improve things?
+					there is a simple aswer just mock Everything
+					you have the opportunity to mock all your network requests
+					you may say it is not a functional test anymore, yeah that's true, but you can mock everything on your local env, to speed things up
+					and do the whole thing on your CI
+					let's check out how can it be with mocks
+				</aside>
+			</section>	
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 11 ****************************** -->
 			<!-- ********************************************************************* -->
 
 			<!-- wag demo + nxc -->
+			<section class="slide-11">
+				<h2 class="slide-3__header">Fast demo</h2>
+				<aside class="notes">
+					As you can see here I don't event need to serve anything from backend, cypress is capable to serve static assets without any 
+					support, it intercept all the network requests and respond with propper fixtures, so UI doesnt see any difference. and tests went
+					much faster, than last time.
+				</aside>
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 12 ****************************** -->
 			<!-- ********************************************************************* -->
-			
+
 			<!-- CI + Docker demo + video-->
 
 			<!-- ********************************************************************* -->
@@ -394,13 +412,13 @@
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 14 ****************************** -->
 			<!-- ********************************************************************* -->
-			
+
 			<!-- gotchas  -->
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 15 ****************************** -->
 			<!-- ********************************************************************* -->
-			
+
 			<!-- thank you -->
 
 			<!-- ********************************************************************* -->
@@ -424,7 +442,7 @@
 				{ src: 'plugin/markdown/marked.js' },
 				{ src: 'plugin/markdown/markdown.js' },
 				{ src: 'plugin/notes/notes.js', async: true },
-				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 			]
 		});
 	</script>
