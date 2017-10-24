@@ -333,9 +333,7 @@
 					<span class="heighlight-e-green">cy.fixture(<span class="heighlight-e-blue">'name'</span>).then(fixture=>{})</span>
 				</p>
 				<p class="fragment fade-in">
-					<span class="heighlight-e-green">cy.fixture(
-						<span class="heighlight-e-blue">'name'</span>).as(
-						<span class="heighlight-e-blue">'nameAlias'</span>)</span>
+					<span class="heighlight-e-green">cy.fixture(<span class="heighlight-e-blue">'name'</span>).as(<span class="heighlight-e-blue">'nameAlias'</span>)</span>
 				</p>
 				<p class="fragment fade-in">
 					<span class="heighlight-e-green">cy.route(<span class="heighlight-e-blue">'GET'</span>,<span class="heighlight-e-blue">'**/users'</span>,<span class="heighlight-e-blue">'fixture:users.json'</span>)</span>
@@ -368,13 +366,12 @@
 			<section class="slide-10">
 				<h2 class="slide-3__header">Time</h2>
 				<p class="fragment">I want faster</p>
-				<p class="fragment fade-in">I want faster</p>
 				<p class="fragment fade-in"><span class="heighlight-e-green">cy.route(<span class="heighlight-e-blue">'GET'</span>,<span class="heighlight-e-blue">'**/users'</span>,<span class="heighlight-e-blue">'fx:users.json'</span>)</span></p>
 				<aside class="notes">
 					Last demo took some time, this is the issue, especially during development, you just don't have so much time to wait while
-					all the tests run after esch your change, and obviously you don't want to wait them to complete after your last commit on Friday night
+					all the tests run after each change, and obviously you don't want to wait them to complete after your last commit on Friday night
 					So how can we improve things?
-					there is a simple aswer just mock Everything
+					there is a simple answer just mock Everything
 					you have the opportunity to mock all your network requests
 					you may say it is not a functional test anymore, yeah that's true, but you can mock everything on your local env, to speed things up
 					and do the whole thing on your CI
@@ -386,12 +383,12 @@
 			<!-- ***************************** slide 11 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- wag demo + nxc -->
+			<!-- nxc demo -->
 			<section class="slide-11">
 				<h2 class="slide-3__header">Fast demo</h2>
 				<aside class="notes">
 					As you can see here I don't event need to serve anything from backend, cypress is capable to serve static assets without any 
-					support, it intercept all the network requests and respond with propper fixtures, so UI doesnt see any difference. and tests went
+					support, it intercepts all the network requests and responds with propper fixtures, so UI doesnt see any difference. and tests went
 					much faster, than last time.
 				</aside>
 			</section>
@@ -400,31 +397,90 @@
 			<!-- ***************************** slide 12 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- CI + Docker demo + video-->
+			<section class="slide-12">
+					<h2 class="slide-3__header">Continious Integration</h2>
+					<pre class="fade-in"><code class="docker" data-trim style="font-size: 18px;">
+							ARG http_proxy=http://proxy.goes.here/
+							FROM cypress/internal:chrome61
+							USER root
+							RUN npm install -g cypress
+							RUN cypress install
+							# now run as the new "non-root" user
+							USER person
+							# run cypress
+							CMD ["cypress", "run", "-P","/home/person/"]
+					</code></pre>
+	
+					<aside class="notes">
+						Ok everything works fast and smooth, but all the work done in the browser
+						you may ask what the point of those tests if you don't have installed browser on your CI
+						server. so there is a good answer for that Docker.
+						There is a simple docker script, you can build an image and that's it, this container will
+						run cypress on CI in real browser and you can even check results after it.
+
+						Cypress has a great reporting tool, it record a vidoe footage of the whole process and when your Tests
+						fail it makes screenshots, lets try the prev run like it could be on your CI server and check results
+					</aside>
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 13 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- competitors puppeteer, testcafe -->
+			<!-- competitors puppeteer, testcafe, selenium -->
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 14 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- gotchas  -->
+			<!--product plans-->
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 15 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- thank you -->
+			<!-- gotchas  -->
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 16 ****************************** -->
 			<!-- ********************************************************************* -->
 
-			<!-- references and contacts -->
+			<section class="slide-16">
+					<h2 class="slide-3__header">References</h2>
+					<a href="https://cypress.io" target="_blank">Cypres.io</a>
+					<a href="https://gitter.im/cypress-io/cypress" target="_blank">Cypres gitter</a>
+					<a href="https://github.com/cypress-io/cypress" target="_blank">Cypres github</a>
+					<a href="mailto: Maxim_Milovanov@epam.com" target="_blank">Email: Maxim_Milovanov@epam.com</a>
+
+					<aside class="notes">
+						Thre are some references where you can find more information about cypress.
+						First link is their site, and they did an amaizing job. They spent toons of time to make documentation,
+						there is full API description, with examples how to use it and what is better to avoid all the pros and cons
+
+						On their gitter channed they are very responsive, I'm not sure when they code, because it seems they are always answering different questions
+
+						Github, they developing their project since 2015, but recenlty they made a huge move, they outsourced everything
+						so you can use it for free and even can contribute to the project
+
+						If you have any questions you can always shoot me an email, will try to answer
+					</aside>
+			</section>
+
+			<!-- ********************************************************************* -->
+			<!-- ***************************** slide 16 ****************************** -->
+			<!-- ********************************************************************* -->
+			
+			<section class="slide-17">
+				<h2 class="slide-3__header">Thank you!</h2>
+				<aside class="notes">
+					Thank you for your time and patience, if you have any questions it's time to ask
+				</aside>
+			</section>
+
+			<section class="slide-18">
+					<h2 class="slide-3__header">Questions ?</h2>
+			</section>
+	
 		</div>
 	</div>
 

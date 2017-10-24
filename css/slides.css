@@ -114,3 +114,18 @@ html {
 .slide-5 p{
   text-align: left!important;
 }
+
+.slide-12 pre {
+  width: 50%!important;
+}
+
+.slide-16 a {
+  display: block!important;
+  color: var(--white)!important;
+  text-align: left!important;
+  padding: 0 10rem;
+}
+
+.slide-16 a:hover{
+  text-decoration: underline!important;
+}
