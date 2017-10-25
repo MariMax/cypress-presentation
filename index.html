@@ -365,7 +365,7 @@
 
 			<section class="slide-10">
 				<h2 class="slide-3__header">Time</h2>
-				<p class="fragment">I want faster</p>
+				<p>I want faster</p>
 				<p class="fragment fade-in"><span class="heighlight-e-green">cy.route(<span class="heighlight-e-blue">'GET'</span>,<span class="heighlight-e-blue">'**/users'</span>,<span class="heighlight-e-blue">'fx:users.json'</span>)</span></p>
 				<aside class="notes">
 					Last demo took some time, this is the issue, especially during development, you just don't have so much time to wait while
@@ -428,18 +428,75 @@
 			<!-- ********************************************************************* -->
 
 			<!-- competitors puppeteer, testcafe, selenium -->
+			<section class="slide-13">
+					<h2 class="slide-3__header">Alternatives</h2>
+					<p class="fragment fade-in">Selenium</p>
+					<p class="fragment fade-in">Puppeteer</p>
+					<p class="fragment fade-in">TestCafe</p>
+					<aside class="notes">
+						There are couple alternatives in the world, probably you all know selenium, it has own advantages, it works with webdriver
+						and webdrivers were made for all browsers, so you can test on any browser, but it is very slow, because it doesn't know current state
+						so you do blind tests, you make an action wait some time, and check if action succeded
+
+						Puppeteer - cool tool but it's not testing tool it's simply chrome API wrapper, if you want to write tests,
+						you will have to add all additional tools like assertion libraries, reporting tools etc.
+
+						TestCafe - old player on the market, their main advatage, they handle all the moderns browsers, but there is no free reporting tool, 
+						cli or engine is free, but if you want to watch it in the browser, or want to record the video of the process, you will need to pay
+						$500 per developer.
+					</aside>	
+			</section>
+
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 14 ****************************** -->
 			<!-- ********************************************************************* -->
 
 			<!--product plans-->
+			<section class="slide-14">
+					<h2 class="slide-3__header">In The future</h2>
+					<p>Plugins system</p>
+					<p class="fragment fade-in">Snapshot testing</p>
+					<p class="fragment fade-in">Screenshot diffing</p>
+					<aside class="notes">
+						There are couple of amazing things in the development pipeline right now
+						Plugins system - allows you to integrate any preprocessing tool straight to your testing environment
+						it could be webpack, babel, typesctipt, what ever you want
+
+						Snapshot testing - cypress already captures snapshots and you can browse thrue them, their next step
+						to save snapshots during first run and on the next run compare 2 similar snapshots, like comparing two states in 
+						the different runs
+
+						Screenshot diffing - you can make screen shots, and cypress will automatically diff them
+					</aside>	
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 15 ****************************** -->
 			<!-- ********************************************************************* -->
 
 			<!-- gotchas  -->
+			<section class="slide-15">
+				<h2 class="slide-3__header">Gotchas</h2>
+				<p>Tests are state dependend</p>
+				<p class="fragment fade-in">Tests polute database</p>
+				<p class="fragment fade-in">Tests require fully functional evnironment</p>
+				<p class="fragment fade-in">Auth issues</p>
+				<aside class="notes">
+					Teasts are state dependend, so you will want to make sone initial setup or seed your environment,
+					before you test something on it
+					
+					When your tests run they basicaly create new entities in your DB, so you probably don't want to run them on production
+					environment, seeding will also solve this issue and you can even remove your DB after
+					
+					You also need fully functional environment to run functional tests, and if they include new functionality you
+					will know that something is wrong only after deployment
+
+					and the most difficult issue probably authontification, we have workaround in our project - login form,
+					but for most applications here you will need to authentificate user somehow, it could be basic authontification 
+					or something similar
+				</aside>
+			</section>
 
 			<!-- ********************************************************************* -->
 			<!-- ***************************** slide 16 ****************************** -->
